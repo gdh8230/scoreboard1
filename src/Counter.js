@@ -1,10 +1,7 @@
 import React from 'react';
 
 export class Counter extends React.Component{
-	state = {
-		score: 30,
-		num:1
-	}
+
 
 	increment = () => {
 		console.log('increment');
