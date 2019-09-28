@@ -38,8 +38,15 @@ class App extends React.Component{
     }));
   }
 
-  handleChangeScore (id, delta) {
+  handleChangeScore = (id, delta) => {
     console.log('handleChangeScore: ', id, delta);
+    this.setState( prevState => {
+    	const player = prevState.players.find(player => player.id === id);
+    	player.score += delta;
+    	return {
+    		player: [ ...prevState.players ]
+			}
+		})
   }
 }
 
