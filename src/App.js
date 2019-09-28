@@ -2,16 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import {Header} from "./Header";
 
-const Header = (props) => {
-  console.log(props);
-  return (
-    <header className="header">
-      <h1 className="h1">ScoreBoard</h1>
-      <span className="stats">Players: {props.totalPlayers}</span>
-    </header>
-  );
-};
 
 class Counter extends React.Component{
   state = {
