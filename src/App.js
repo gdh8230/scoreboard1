@@ -18,7 +18,7 @@ class App extends React.Component{
   render() {
     return (
       <div className="scoreboard">
-        <Header title="My scoreboard" totalPlayers={11}/>
+        <Header title="My scoreboard" totalPlayers={11} players={this.state.players}/>
         {
           this.state.players.map((player) => {
             return (
@@ -53,6 +53,8 @@ class App extends React.Component{
 			}
 		})
   }
+
+
 }
 
 export default App;
