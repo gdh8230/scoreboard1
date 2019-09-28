@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 
 import {Header} from "./Header";
-import {Counter} from "./Counter";
 import {Player} from "./Player";
 
 
