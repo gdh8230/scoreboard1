@@ -9,6 +9,7 @@ import {AddPlayerForm} from "./AddPlayerForm";
 
 
 class App extends React.Component{
+	maxId = 4;
   state = {
     players : [
       {name: 'ldk', score: 30,id:1},
@@ -59,8 +60,27 @@ class App extends React.Component{
 		})
   }
 
-	handlePlayer (name){
+	handlePlayer = (name) => {
   	console.log('handlePlayer:', name);
+  	this.setState(prevState => {
+  		// 방식1
+  		// prevState.players.push({name: name, score:0, id: ++this.maxId}); // push는 기존 배열을 오염시킴
+  		// return {
+  		// 	players:[ ...prevState.players ] // 새 배열에 펼치는 코드
+			// }
+
+			// 방식2
+			// const players = [ ...prevState.players ];
+			// players.push({name: name, score:0, id: ++this.maxId});
+			// return {
+			// 	players: players
+			// }
+			const players = [ ...prevState.players ];
+			players.push({name, score:0, id: ++this.maxId});
+			return {
+				players
+			}
+		})
 	}
 
 }
