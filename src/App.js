@@ -1,9 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 import {Header} from "./Header";
 import {Player} from "./Player";
+import {AddPlayerForm} from "./AddPlayerForm";
+
 
 
 class App extends React.Component{
@@ -19,6 +21,7 @@ class App extends React.Component{
     return (
       <div className="scoreboard">
         <Header title="My scoreboard" totalPlayers={11} players={this.state.players}/>
+
         {
           this.state.players.map((player) => {
             return (
@@ -28,6 +31,8 @@ class App extends React.Component{
             )
           })
         }
+
+        <AddPlayerForm addPlayer={this.handlePlayer}/>
       </div>
     )
   }
@@ -54,6 +59,9 @@ class App extends React.Component{
 		})
   }
 
+	handlePlayer (name){
+  	console.log('handlePlayer:', name);
+	}
 
 }
 
